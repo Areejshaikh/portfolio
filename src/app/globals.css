@@ -2,54 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
 
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
+::-webkit-scrollbar-track {
+  background: #FEF9F2;
+}
 
-.card{
-    margin: 0 auto;
-    padding: 0.5rem;
-    width: 350px;
-    background: #FEF9E1;
-    height: fit-content;
-    text-align: center;
-    border-radius: 10px;
-    position: relative;
-    margin-bottom: 2rem;
+::-webkit-scrollbar-thumb {
+  background: #A31D1D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #213555;
+}
+
+/* Gradient border animation for cards */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card {
+  margin: 0 auto;
+  padding: 0.5rem;
+  width: 350px;
+  background: #FEF9E1;
+  height: fit-content;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.card::after,
+.card::before {
+  content: '';
+  position: absolute;
+  height: 450px;
+  width: 350px;
+  background-image: conic-gradient(from var(--angle), hsl(83, 61%, 56%), #00ff99, #213555, #D8C4B6, #ff4545);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 8px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+
+.card::before {
+  filter: blur(1.2rem);
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
   }
-  
-  @property --angle{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
+  to {
+    --angle: 360deg;
   }
-  
-  .card::after, .card::before{
-    content: '';
-    position: absolute;
-    height: 450px;
-    width: 350px;
-    background-image: conic-gradient(from var(--angle), hsl(83, 61%, 56%), #00ff99, #213555, #D8C4B6, #ff4545);
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-    padding: 8px;
-    border-radius: 10px;
-    animation: 3s spin linear infinite;
-  }
-  .card::before{
-    filter: blur(1.2rem);
-    opacity: 0.5;
-  }
-  @keyframes spin{
-    from{
-      --angle: 0deg;
-    }
-    to{
-      --angle: 360deg;
-    }
-  }
+}
 
-
-
-
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #A31D1D;
+  outline-offset: 2px;
+}

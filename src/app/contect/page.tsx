@@ -2,105 +2,136 @@ import Link from "next/link"
 
 function Contact() {
     return (
-        <section id="contact" className="bg-base-color body-font z-auto text-base-text overflow-hidden">
-            <div className="container  mx-auto flex sm:flex-nowrap flex-wrap">
-                <div className=" bg-base-color shadow-2xl sm:w-auto lg:w-2/3 md:w-1/2  items-end flex flex-wrap mt-8  md:mr-10 md:p-10  rounded-lg relative">
+        <section id="contact" className="bg-base-color body-font text-base-text overflow-hidden py-24 px-6">
+            <div className="max-w-screen-2xl mx-auto">
+                {/* Header */}
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold text-base-text mb-4">Let&apos;s Build Something Together</h2>
+                    <p className="text-base-text/70 text-lg max-w-2xl mx-auto">
+                        I&apos;m currently available for full-time roles, contract work, and freelance projects. 
+                        If you need a developer who ships fast and writes clean code, let&apos;s talk.
+                    </p>
+                </div>
 
-                    <div className="absolute inset-0 hidden md:block">
-                        <h3 className="lg:text-4xl lg:m-12 m-4">Lets Work Together</h3>
-                        <p className="lg:m-12 text-lg leading-relaxed m-4">
-                        I design and code beautifully simple things code and i love what i do! 
-                        </p>
-                    </div>
-                    <div className="bg-base-color border border-base-text  flex flex-wrap md:py-8 md:p-0 p-2 md:mr-12 lg:py-12  rounded shadow-md  ">
-                        <div className="w-full lg:w-1/2 md:px-8">
-                            <h2 className="title-font font-semibold text-base-text tracking-widest text-lg">
-                                ADDRESS
-                            </h2>
-                            <p className="mt-1 capitalize">
-                            housing society karachi  street no 76, Pakistan
+                <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    {/* Left - Contact Info */}
+                    <div className="space-y-8">
+                        <div>
+                            <h3 className="text-xl font-bold text-base-text mb-4">Get In Touch</h3>
+                            <p className="text-base-text/70 leading-relaxed">
+                                Whether you have a project in mind, a role to fill, or just want to connect—I&apos;d love to hear from you. 
+                                I typically respond within 24 hours.
                             </p>
                         </div>
-                        <div className="lg:w-1/2 md:px-6 mt-4 lg:mt-0">
-                            <h2 className="title-font font-semibold text-base-text tracking-widest text-lg">
-                                EMAIL
-                            </h2>
-                            <Link href={"https://mail.google.com/mail/u/0/#inbox"} target="_blank" className="text-base-text cursor-pointer leading-relaxed text-lg">areejzaheer@gmail.com</Link>
-                            <h2 className="title-font font-semibold text-base-text  tracking-widest text-lg mt-4">
-                                PHONE NUMBER
-                            </h2>
-                            <p className="leading-relaxed text-lg">0317-XXXXXXX</p>
+
+                        <div className="space-y-6">
+                            <div>
+                                <h4 className="text-sm font-semibold text-base-text/50 uppercase tracking-wider mb-2">Email</h4>
+                                <Link href="mailto:areejzaheer@gmail.com" className="text-base-text hover:opacity-70 transition-opacity text-lg">
+                                    areejzaheer@gmail.com
+                                </Link>
+                            </div>
+
+                            <div>
+                                <h4 className="text-sm font-semibold text-base-text/50 uppercase tracking-wider mb-2">Location</h4>
+                                <p className="text-base-text text-lg">Karachi, Pakistan (Open to Remote)</p>
+                            </div>
+
+                            <div>
+                                <h4 className="text-sm font-semibold text-base-text/50 uppercase tracking-wider mb-4">Connect</h4>
+                                <div className="flex gap-4">
+                                    <Link href="https://github.com/" target="_blank" rel="noopener noreferrer" 
+                                        className="text-base-text hover:opacity-70 transition-opacity">
+                                        GitHub
+                                    </Link>
+                                    <span className="text-base-text/30">•</span>
+                                    <Link href="https://linkedin.com/" target="_blank" rel="noopener noreferrer"
+                                        className="text-base-text hover:opacity-70 transition-opacity">
+                                        LinkedIn
+                                    </Link>
+                                    <span className="text-base-text/30">•</span>
+                                    <Link href="https://dribbble.com/" target="_blank" rel="noopener noreferrer"
+                                        className="text-base-text hover:opacity-70 transition-opacity">
+                                        Dribbble
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="lg:w-1/3 md:w-1/2 md:p-0 p-2 bg-base-color flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-                    <h2 className="text-base-text text-lg mb-1 font-medium title-font">
-                        Feedback
-                    </h2>
-                    <p className="leading-relaxed mb-5 text-base-text">
-                    Your feedback drives my improvement. Keep sharing your thoughts!
-                    </p>
-                    <form
-                    action="https://formspree.io/f/xanqdpdj"
-                    method="POST">
-                    <div className="relative mb-4">
-                        <label htmlFor="name" className="leading-7 text-sm text-base-text">
-                            Name
-                        </label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            className="w-full bg-base-color rounded-md border border-base-text text-base  py-1 px-3 leading-8"
-                        required />
+
+                    {/* Right - Form */}
+                    <div>
+                        <form
+                            action="https://formspree.io/f/xanqdpdj"
+                            method="POST"
+                            className="space-y-6"
+                        >
+                            <div>
+                                <label htmlFor="name" className="block text-sm font-semibold text-base-text/70 mb-2">
+                                    Name
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    placeholder="Your full name"
+                                    className="w-full bg-transparent border border-base-text/30 rounded-md px-4 py-3 text-base-text placeholder-base-text/30 focus:outline-none focus:border-base-text transition-colors"
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="email" className="block text-sm font-semibold text-base-text/70 mb-2">
+                                    Email
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    placeholder="you@company.com"
+                                    className="w-full bg-transparent border border-base-text/30 rounded-md px-4 py-3 text-base-text placeholder-base-text/30 focus:outline-none focus:border-base-text transition-colors"
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="subject" className="block text-sm font-semibold text-base-text/70 mb-2">
+                                    Subject
+                                </label>
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    placeholder="Job opportunity / Project inquiry"
+                                    className="w-full bg-transparent border border-base-text/30 rounded-md px-4 py-3 text-base-text placeholder-base-text/30 focus:outline-none focus:border-base-text transition-colors"
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="message" className="block text-sm font-semibold text-base-text/70 mb-2">
+                                    Message
+                                </label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    required
+                                    rows={5}
+                                    placeholder="Tell me about your project or role..."
+                                    className="w-full bg-transparent border border-base-text/30 rounded-md px-4 py-3 text-base-text placeholder-base-text/30 focus:outline-none focus:border-base-text transition-colors resize-none"
+                                />
+                            </div>
+
+                            <button 
+                                type="submit" 
+                                className="w-full bg-base-text text-base-color font-semibold py-3 px-6 rounded-md hover:opacity-90 transition-opacity text-lg"
+                            >
+                                Send Message
+                            </button>
+                        </form>
                     </div>
-                    <div className="relative mb-4">
-                        <label htmlFor="email" className="leading-7 text-sm text-base-text">
-                            Email
-                        </label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            className="w-full bg-base-color rounded-md text-base-text py-1 px-3 leading-8 border border-base-text"
-                        required/>
-                    </div>
-                    <div className="relative mb-4">
-                        <label htmlFor="subject" className="leading-7 text-sm text-base-text">
-                            Subject
-                        </label>
-                        <input
-                            type="text"
-                            id="subject"
-                            name="subject"
-                            className="w-full bg-base-color rounded-md border border-base-text text-base-text py-1 px-3 leading-8"
-                        />
-                    </div>
-                    <div className="relative mb-4">
-                        <label htmlFor="message" className="leading-7 text-sm text-base-text">
-                            Message
-                        </label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            className="w-full bg-base-color rounded-md h-32 border border-base-text text-base-text py-1 px-3 leading-6 "
-                            defaultValue={""}
-                        />
-                    </div>
-                    
-                    <button className="border-base-text w-full rounded-md border text-base-text hover:bg-base-color hover:text-base-text py-2 px-6 text-lg">
-                        Submit
-                    </button>
-                    </form>
-                    <p className="text-xs text-base-text mt-3">
-                    Thank you for hiring me! I&apos;m excited to work with you.
-                    </p>
                 </div>
             </div>
         </section>
-
-
-
     )
 }
 

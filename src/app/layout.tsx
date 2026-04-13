@@ -16,8 +16,17 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Areej portfolio",
-  description: "Areej portfolio",
+  title: "Areej Zaheer | Full-Stack Developer",
+  description: "Full-stack developer specializing in Next.js, React, and modern web architectures. I build fast, accessible, and scalable web applications.",
+  keywords: ["Full-Stack Developer", "Next.js Developer", "React Developer", "Web Developer Karachi", "TypeScript Developer"],
+  openGraph: {
+    title: "Areej Zaheer | Full-Stack Developer",
+    description: "Building web applications that perform, scale, and convert. Specialized in Next.js, React, and TypeScript.",
+    url: "https://areejzaheer.vercel.app",
+    siteName: "Areej Zaheer Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

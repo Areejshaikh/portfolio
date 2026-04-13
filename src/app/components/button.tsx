@@ -1,21 +1,21 @@
 interface ButtonProps {
     name: string;
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
 }
 
-const Button = ({ name ,icon}: ButtonProps) => {
+const Button = ({ name, icon }: ButtonProps) => {
     return (
-        <div>
-            <button
-                className=' hover:bg-base-text text-base-text duration-500 animate-fadeIn animate-slideInRight md:animate-slideInLeft
-                        leading-3 cursor-pointer flex  py-4 justify-center sm:text-lg sm:pt-2 2xl:ml-32 xl:mt-2 my-8 hover:shadow-2xl hover:text-base-heading border-base-text border
-                         rounded-3xl p-auto w-60 h-12  sm:text-12 '>
-               {name}
-                {/* {icon ? icon : <GrInstallOption className='w-6 h-6 ml-2' />} */}
-                {icon}
-            </button>
-
-        </div>
+        <button
+            className="group cursor-pointer inline-flex items-center justify-center gap-2 px-8 py-3 
+                       border-2 border-base-text text-base-text font-medium
+                       hover:bg-base-text hover:text-base-color 
+                       transition-all duration-300 ease-in-out
+                       rounded-full text-base md:text-lg
+                       focus:outline-none focus:ring-2 focus:ring-base-text focus:ring-offset-2"
+        >
+            {name}
+            {icon && <span className="transition-transform group-hover:translate-x-1">{icon}</span>}
+        </button>
     )
 }
 

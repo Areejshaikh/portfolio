@@ -5,150 +5,86 @@ import Link from "next/link"
 import Image1 from "../../../public/image1.webp"
 import Image2 from "../../../public/image2.jpg"
 import Image3 from "../../../public/image3.jpg"
-
-import Button from "../components/button"
 import { motion } from 'framer-motion'
 
 const Blog = () => {
+    const blogPosts = [
+        {
+            category: "Frontend Architecture",
+            title: "What I Learned Building 6+ Production Apps",
+            excerpt: "Real lessons from shipping code to real users—performance pitfalls, state management mistakes, and the patterns that actually scale.",
+            image: Image1,
+            link: "/",
+        },
+        {
+            category: "AI + Development",
+            title: "How AI Is Changing Frontend Development",
+            excerpt: "From code generation to intelligent UIs, I explore how AI tools are augmenting developer workflows—and what it means for our careers.",
+            image: Image2,
+            link: "/",
+        },
+        {
+            category: "Career Growth",
+            title: "From Zero to Job-Ready Developer",
+            excerpt: "The roadmap I followed to go from beginner to building full-stack applications. No bootcamps, just deliberate practice and real projects.",
+            image: Image3,
+            link: "/",
+        },
+    ]
+
     return (
-        <div id='blog'>
-            <div className="m-auto flex flex-row  justify-center">
-                <span className="text-3xl font-semibold text-base-text xl:text-6xl 2xl:text-6xl">Our Blog</span>
-            </div>
-            <section className="text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto">
-                    <div className="flex flex-wrap justify-between -m-4">
-                        {/* First Blog Star */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 200 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.8 }}
-                            viewport={{ once: true }}
-                            className="p-4 md:w-96"
-                        >
-                            <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                                {/* Rest of card content here */}
-                                <div className="p-4 md:w-96">
-                                    <div className="h-full overflow-hidden">
-                                        <Image
-                                            className="lg:h-48 md:h-36 w-full object-cover object-center"
-                                            src={Image1}
-                                            alt="blog"
-                                        />
-                                        <div className="p-6">
-                                            <h2 className="tracking-widest text-xs title-font font-medium text-base-text mb-1">
-                                                JOURNEY
-                                            </h2>
-                                            <h1 className="title-font text-lg font-medium text-base-text mb-3">
-                                                My Frontend Journey
-                                            </h1>
-                                            <p className="leading-relaxed mb-3 text-base-text line-clamp-3">
-                                                I started my journey into frontend development out of pure curiosity. Today, I build modern UIs with Next.js and Tailwind CSS. This blog covers how I learned, what mistakes I made, and how you can begin too.
-                                            </p>
-                                            <div className="flex items-center flex-wrap ">
-                                                <Link href={"/"} className="text-base-text inline-flex items-center md:mb-2 lg:mb-0">
-                                                    <Button name={"Learn More"} icon={""} />
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-                        {/*Blog End */}
-                        {/* second Blog Start */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 300 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.6 }}
-                            viewport={{ once: true }}
-                            className="p-4 md:w-96"
-                        >
-                            <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                                {/* Rest of card content here */}
-                                <div className="p-4 md:w-96">
-                                    <div className="h-full overflow-hidden">
-                                        <Image
-                                            className="lg:h-48 md:h-36 w-full object-cover object-center"
-                                            src={Image2}
-                                            alt="blog"
-                                        />
-                                        <div className="p-6">
-                                            <h2 className="tracking-widest text-xs title-font font-medium text-base-text mb-1">
-                                                AI + FRONTEND
-                                            </h2>
-                                            <h1 className="title-font text-lg font-medium text-base-text mb-3">
-                                                I&apos;m Learning AI Alongside Web Development
-                                            </h1>
-                                            <p className="leading-relaxed mb-3 text-base-text line-clamp-2">
-                                                As a frontend developer, I believe AI is the future. In this post, I talk about how AI and web development go hand in hand — and why I joined the Governor&apos;s AI Program to level up my skills.
-                                            </p>
-
-
-                                            <div className="flex items-center flex-wrap ">
-                                                <Link href={"/"} className="text-base-text inline-flex items-center md:mb-2 lg:mb-0">
-                                                    <Button name={"Learn More"} icon={""} />
-
-                                                </Link>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </motion.div>
-                        {/* Third Blog Start */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 300 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.9 }}
-                            viewport={{ once: true }}
-                            className="p-4 md:w-96"
-                        >
-                            <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                                {/* Rest of card content here */}
-                                <div className="p-4 md:w-96 ">
-                                    <div className="h-full  overflow-hidden">
-                                        <Image
-                                            className="lg:h-48 md:h-36 w-full object-cover object-center"
-                                            src={Image3}
-                                            alt="blog"
-                                        />
-                                        <div className="p-6">
-                                            <h2 className="tracking-widest text-xs title-font font-medium text-base-text mb-1">
-                                                FREELANCING
-                                            </h2>
-                                            <h1 className="title-font text-lg font-medium text-base-text mb-3">
-                                                My First Step Towards Freelancing
-                                            </h1>
-                                            <p className="leading-relaxed mb-3 text-base-text line-clamp-3">
-                                                Freelancing is more than just earning online — it&apos;s about independence and growth. I&apos;m building my profile, learning client communication, and preparing to offer frontend services globally.
-
-                                            </p>
-                                            <div className="flex items-center flex-wrap ">
-                                                <Link href={"#"} className="text-base-text inline-flex items-center md:mb-2 lg:mb-0">
-                                                    <Button name={"Learn More"} icon={""} />
-
-                                                </Link >
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-
-
-
-                    </div>
+        <div id="blog" className="py-24 px-6 bg-base-text/5">
+            <div className="max-w-screen-2xl mx-auto">
+                {/* Header */}
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold text-base-text mb-4">Writing & Insights</h2>
+                    <p className="text-base-text/70 text-lg max-w-2xl mx-auto">
+                        Lessons learned from building real applications
+                    </p>
                 </div>
-            </section>
 
-
-
+                {/* Blog Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    {blogPosts.map((post, index) => (
+                        <motion.article
+                            key={index}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.15 }}
+                            viewport={{ once: true }}
+                            className="bg-base-color rounded-lg overflow-hidden border border-base-text/10 hover:shadow-xl transition-shadow duration-300"
+                        >
+                            <div className="relative h-48">
+                                <Image
+                                    src={post.image}
+                                    alt={post.title}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            
+                            <div className="p-6">
+                                <span className="text-xs font-semibold text-base-text/50 uppercase tracking-wider">
+                                    {post.category}
+                                </span>
+                                <h3 className="text-xl font-bold text-base-text mt-2 mb-3 line-clamp-2">
+                                    {post.title}
+                                </h3>
+                                <p className="text-base-text/70 text-sm leading-relaxed line-clamp-3 mb-4">
+                                    {post.excerpt}
+                                </p>
+                                <Link 
+                                    href={post.link}
+                                    className="text-base-text font-medium hover:opacity-70 transition-opacity inline-flex items-center gap-2"
+                                >
+                                    Read Article
+                                    <span aria-hidden="true">→</span>
+                                </Link>
+                            </div>
+                        </motion.article>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }
