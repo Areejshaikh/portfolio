@@ -123,7 +123,7 @@ function Portfolio() {
                         className="text-left my-4 text-base-text text-base font-semibold">
                         I created a responsive admin dashboard for a local fashion boutique. It&apos;s a great way to showcase their products and events.
                     </p>
-                    <Link href={"https://admin-dashboardvercelapp.vercel.app/"} target="blang">
+                    <Link href={"https://admin-dashboard-nine-blue-39.vercel.app/admin"} target="blang">
                         <Button name="live Demo" icon={""} />
                     </Link>
                 </div>
